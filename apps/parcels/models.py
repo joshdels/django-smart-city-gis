@@ -2,7 +2,7 @@ from django.contrib.gis.db import models as gis_models
 from django.db import models
 
 
-class Owner(models):
+class Owner(models.Model):
     owner_id = models.AutoField(primary_key=True)
 
     first_name = models.CharField(max_length=200)
@@ -16,9 +16,9 @@ class Owner(models):
 
 
 class Parcels(models.Model):
-    parcel_id = models.idField(max_length=200, unique=True)
+    parcel_id = models.CharField(max_length=200, unique=True)
 
-    geom = models.PolygonField(srid=4326)
+    geom = gis_models.PolygonField(srid=4326)
 
     ownership = models.ForeignKey(
         Owner, on_delete=models.SET_NULL, null=True, blank=True, related_name="parcels"
