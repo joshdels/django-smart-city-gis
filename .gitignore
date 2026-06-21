@@ -1,0 +1,55 @@
+# === Python ===
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.sqlite3
+
+# Virtual environments
+venv/
+env/
+.venv/
+ENV/
+
+# Django stuff
+*.log
+local_settings.py
+db.sqlite3
+
+# Media & static (if locally generated)
+media/
+staticfiles/
+
+# Django migrations (ONLY if you regenerate them; usually NOT ignored)
+# */migrations/*.py
+# !*/migrations/__init__.py
+
+# Environment variables
+.env
+.env.*
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# pytest / coverage
+.coverage
+htmlcov/
+.pytest_cache/
+
+# mypy / type checking
+.mypy_cache/
+
+# Django collectstatic
+staticfiles/
+
+# Node (if frontend included)
+node_modules/
+dist/
+build/
