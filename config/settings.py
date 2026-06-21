@@ -25,15 +25,12 @@ load_dotenv(BASE_DIR / ".env")
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ.get("SECRET_KEY")
-
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = []
 
 
 # Application definition
-
 INSTALLED_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
@@ -44,6 +41,7 @@ INSTALLED_APPS = [
     "django.contrib.gis",
     # Apps
     "apps.parcels",
+    "apps.accounts",
 ]
 
 MIDDLEWARE = [
@@ -110,6 +108,8 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 LOGIN_URL = "/accounts/login/"
+
+AUTH_USER_MODEL = "accounts.User"
 
 
 # Internationalization

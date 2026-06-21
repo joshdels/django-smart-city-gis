@@ -1,8 +1,10 @@
-from django.shortcuts import render, get_object_or_404
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render
 from .models import Parcels, Owner, Boundary
 
 
+@login_required
 def home_view(request):
-    context = {"username": "Alex"}
+    context = {"user": request.user}
 
     return render(request, "index.html", context)
