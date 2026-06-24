@@ -4,14 +4,16 @@ from django.core.management.base import BaseCommand, CommandError
 
 
 class Command(BaseCommand):
-    help = "Manually imports a Shapefile into the database using ogr2ogr"
+    help = "Manually imports a a GIS file into PostGIS using ogr2ogr"
 
     def add_arguments(self, parser):
-        parser.add_argument("shp_path", type=str, help="Absolute path to the .shp file")
+        parser.add_argument(
+            "file_path", type=str, help="Absolute path to GIS file (.gpkg .shp)"
+        )
         parser.add_argument("table_name", type=str, help="Target database table name")
 
     def handle(self, *args, **options):
-        shp_path = options["shp_path"]
+        file_path = options["file_path"]
         table_name = options["table_name"]
 
         db = settings.DATABASES["default"]
@@ -24,25 +26,28 @@ class Command(BaseCommand):
             f"port={db.get('PORT', '5432')} "
         )
 
-        self.stdout.write(self.style.WARNING(f"Starting import of {shp_path}..."))
+        self.stdout.write(self.style.WARNING(f"Starting import of {file_path}..."))
 
         try:
             subprocess.run(
                 [
                     "ogr2ogr",
+                    "-progress",
                     "-f",
                     "PostgreSQL",
                     pg_conn,
-                    shp_path,
+                    file_path,
                     "-nln",
                     table_name,
                     "-append",
                     "-lco",
-                    "GEOMETRY_NAME=geom",
+                    "FID=fid",
                     "-lco",
-                    "FID=id",
+                    "GEOMETRY_NAME=geom",
                     "-nlt",
                     "PROMOTE_TO_MULTI",
+                    "-t_srs",
+                    "EPSG:4326",
                 ],
                 check=True,
                 capture_output=True,
