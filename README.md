@@ -39,9 +39,14 @@ CREATE EXTENSIONS postgis
 
 ```
 
-
+run django server
 ```
 uv sync
 python manage.py migrate
 python manage.py runserver
+```
+
+to ingest gis files
+```
+python manage.py import_shp </shapefile path> <table_nmae>
 ```
