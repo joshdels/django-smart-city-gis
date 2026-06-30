@@ -30,23 +30,39 @@ plans/               # pre planing stuffs
 
 ## To start
 
-prerequisite (start a postgres)
+### postgres
+
 ```
 sudo -u <user> psql
 CREATE DATABASE <database_name>:
 \c <database_name>
-CREATE EXTENSIONS postgis
-
+CREATE EXTENSION postgis
 ```
 
-run django server
+### .env structure
+
+```
+ENV=dev
+
+SECRET_KEY="django-key"
+
+DB_NAME=
+DB_USER=
+DB_PASSWORD=
+DB_HOST=
+DB_PORT=
+```
+
+### run django server
+
 ```
 uv sync
 python manage.py migrate
 python manage.py runserver
+python manage.py createsuperuser
 ```
 
 to ingest gis files
 ```
-python manage.py import_shp </shapefile path> <table_nmae>
+python manage.py import_gis <shapefile path> <table_name>
 ```
