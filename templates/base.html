@@ -7,9 +7,12 @@
         <title>
             {% block title %}{% endblock %}
         </title>
+        <script src="https://unpkg.com/htmx.org@2.0.6"></script>
         <link rel="stylesheet" href="{% static 'css/global.css' %}">
+        {% block extra_css %}{% endblock %}
     </head>
     <body>
+        {% include 'navbar.html' %}
         {% block content %}{% endblock %}
     </body>
 </html>

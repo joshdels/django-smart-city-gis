@@ -13,6 +13,9 @@ def homepage(request):
 def inquiry_page(request):
     return render(request, "inquiry.html")
 
+def inquiry_form(request):
+    return render(request, "form/contact.html")
+
 
 def send_public_form(request):
     if request.method == "POST":
@@ -26,8 +29,8 @@ def send_public_form(request):
         if cooldown:
             return render(
                 request,
-                "index.html",
-                {"error": "You have already submitted an inquiry within the last 24 h"},
+                "form/contact.html",
+                {"error": "You have already submitted an inquiry within the last 24 hours"},
             )
 
         Guest.objects.create(
@@ -38,6 +41,5 @@ def send_public_form(request):
             phone=request.POST["phone"],
         )
 
-        return render(request, "success.html")
+        return render(request, "form/contact_success.html", {"email": email})
 
-    return redirect("home")

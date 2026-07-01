@@ -1,4 +1,80 @@
-html, body, * {
-    padding: 0;
-    margin: 0;
+:root {
+  /* Colors */
+  --color-bg: #ebe7df;
+  --color-dark: #2b1d0e;
+  --color-accent: #f4530a;
+  --color-text-light: #ebe7df;
+
+  /* Typography */
+  --font-heading: "Neue Haas Grotesk", "Helvetica Now", Arial, sans-serif;
+  --font-body: "Inter", "Helvetica Neue", Arial, sans-serif;
+
+  --fw-black: 800;
+  --fw-bold: 700;
+  --fw-regular: 400;
+
+  /* Spacing/Radius */
+  --radius-btn: 4px;
+  --border-hairline: 1px solid rgba(43, 29, 14, 0.3);
+}
+
+
+input {
+  background-color: white;
+  padding: 0.5rem;
+  outline: var(--border-hairline);
+  border-radius: var(--radius-btn);
+}
+
+textarea {
+  background-color: white;
+  padding: 0.5rem;
+  outline: var(--border-hairline);
+  border-radius: var(--radius-btn);
+}
+
+html,
+* {
+  padding: 0;
+  margin: 0;
+  background-color: var(--color-bg);
+  font-family: var(--font-heading);
+}
+
+body {
+    padding: 2rem 10rem;
+}
+
+
+.btn-primary {
+  background: var(--color-dark);
+  color: var(--color-bg);
+  padding: 12px 24px;
+  border-radius: var(--radius-btn);
+  font-weight: var(--fw-bold);
+  border: none;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--color-dark);
+  color: var(--color-dark);
+  border-radius: var(--radius-btn);
+  padding: 10px 20px;
+}
+
+.success-toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+
+    padding: 16px 20px;
+
+    background: #16a34a;
+    color: white;
+
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,.2);
+
+    z-index: 1000;
 }
