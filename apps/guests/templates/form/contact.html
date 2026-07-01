@@ -31,7 +31,14 @@
         <div>
             <label for="phone">Phone</label>
             <br>
-            <input type="tel" id="phone" name="phone" placeholder="+63 912 345 6789">
+            <input type="tel"
+                   id="phone"
+                   name="phone"
+                   inputmode="numeric"
+                   pattern="[0-9]{10}"
+                   minlength="10"
+                   maxlength="12"
+                   placeholder="+63 912 345 6789">
         </div>
         <br>
         <div>

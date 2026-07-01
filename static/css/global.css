@@ -1,3 +1,5 @@
+@import url('footer.css');
+
 :root {
   /* Colors */
   --color-bg: #ebe7df;
@@ -41,9 +43,6 @@ html,
   font-family: var(--font-heading);
 }
 
-body {
-    padding: 2rem 10rem;
-}
 
 
 .btn-primary {

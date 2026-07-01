@@ -12,7 +12,12 @@
         {% block extra_css %}{% endblock %}
     </head>
     <body>
-        {% include 'navbar.html' %}
-        {% block content %}{% endblock %}
+        <div class="border">
+            {% include 'navbar.html' %}
+            {% block content %}{% endblock %}
+        </div>
+        <div>
+            {% include 'footer.html' %}
+        </div>
     </body>
 </html>
