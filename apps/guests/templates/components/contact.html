@@ -1,0 +1,58 @@
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert {{ message.tags }}">{{ message }}</div>
+    {% endfor %}
+{% endif %}
+
+<form method="POST" action="{% url 'send_public_form' %}">
+    {% csrf_token %}
+    <div>
+        <label for="name">Name *</label>
+        <br>
+        <input type="text" id="name" name="name" placeholder="Your name" required>
+    </div>
+    <br>
+    <div>
+        <label for="organization">Organization</label>
+        <br>
+        <input type="text"
+               id="organization"
+               name="organization"
+               placeholder="Company, Municipality, or Individual">
+    </div>
+    <br>
+    <div>
+        <label for="email">Email *</label>
+        <br>
+        <input type="email"
+               id="email"
+               name="email"
+               placeholder="you@example.com"
+               required>
+    </div>
+    <br>
+    <div>
+        <label for="phone">Phone</label>
+        <br>
+        <input type="tel" id="phone" name="phone" placeholder="+63 912 345 6789">
+    </div>
+    <br>
+    <div>
+        <label for="inquiry">Inquiry *</label>
+        <br>
+        <textarea id="inquiry"
+                  name="inquiry"
+                  rows="6"
+                  placeholder="Tell us about your project or how we can help..."
+                  required></textarea>
+    </div>
+    <br>
+    <button type="submit">Send Inquiry</button>
+</form>
+
+<p>
+    TopMap Solutions needs the contact information you provide to us to contact you about our products and services. You
+    may unsubscribe from these communications at any time.
+    For information on how to unsubscribe, as well as our privacy practices and commitment to protecting your privacy,
+    please review our Privacy Policy.
+</p>

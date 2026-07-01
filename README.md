@@ -1,6 +1,6 @@
 # Smart City GIS Offices
 
-this is a monolith application that handles planning offices
+this is a monolith application that handles land planning offices
 
 ## Tech Stack
 
@@ -8,29 +8,42 @@ this is a monolith application that handles planning offices
 2. django all auth
 3. maplibre
 4. postgresql / postgis
-5. htmx and vanila js
+5. htmx, css, vanila js
+6. s3 backblaze (cloud storage)
 
 ## Project Structure
 
 ```
+.docker /
+    │
+    ├── Dockerfile
+    |── docker-compose.yml
+
+.github /
+    │
+    └── github/workflows
+        │
+        └── github/workflows
+
+
 apps/
-│
-├── accounts/        # users, roles, auth
-├── parcels/         # GIS core (MAIN APP)
-├── owners/          # land owners
-└── dashboard/       # UI pages, filters, map views
+    │
+    ├── accounts/        # users, roles, auth
+    ├── parcels/         # GIS core (MAIN APP)
+    ├── owners/          # land owners
+    └── dashboard/       # UI pages, filters, map views
 
-config/              # users, roles, auth
+config/                  # users, roles, auth
+templates/               # global html
+static/                  # global styles and images
 
-manage.py
-
-plans/               # pre planing stuffs
-.env                 # environment
+plans/                   # pre planing stuffs
+.env                     # environment
 ```
 
 ## To start
 
-### postgres
+### Postgres
 
 ```
 sudo -u <user> psql
@@ -39,7 +52,7 @@ CREATE DATABASE <database_name>:
 CREATE EXTENSION postgis
 ```
 
-### .env structure
+### Environment Structure
 
 ```
 ENV=dev
@@ -53,7 +66,7 @@ DB_HOST=
 DB_PORT=
 ```
 
-### run django server
+### Django Run Commands
 
 ```
 uv sync

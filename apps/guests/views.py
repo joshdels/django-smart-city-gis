@@ -7,7 +7,11 @@ from .models import Guest
 
 
 def homepage(request):
-    pass
+    return render(request, "homepage.html")
+
+
+def inquiry_page(request):
+    return render(request, "inquiry.html")
 
 
 def send_public_form(request):

@@ -1,0 +1,41 @@
+name: Deploy to Server Vultr
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SERVER_IP }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          timeout: 60m
+          command_timeout: 60m
+          script: |
+            set -e
+
+            cd ~/myapps/django-utilities
+            git fetch origin main
+            git reset --hard origin/main
+
+            export DOCKER_BUILDKIT=1
+
+            echo "--- Building Docker images (cached) ---"
+            docker-compose -f .docker/docker-compose.yml up -d --build
+
+            echo "--- Running Post-Deployment Cleanup ---"
+            docker image prune -f
+            docker container prune -f
+            docker volume prune -f 
+
+            echo "--- Deployment Complete ---"

@@ -1,14 +1,15 @@
-<h2>Login</h2>
-
-{% if error %}
-<p>{{ error }}</p>
-{% endif %}
-
-<form method="POST">
-  {% csrf_token %}
-  <input type="text" name="username" placeholder="Username" />
-  <input type="password" name="password" placeholder="Password" />
-  <button type="submit">Login</button>
-</form>
-
-<a href="/accounts/register/">Register</a>
+{% extends 'base.html %}
+{% block title %}Login | TopMap Solutions{% endblock %}
+{% block content %}
+    <h2>Login</h2>
+    {% if error %}
+        <p>{{ error }}</p>
+    {% endif %}
+    <form method="POST">
+        {% csrf_token %}
+        <input type="text" name="username" placeholder="Username" />
+        <input type="password" name="password" placeholder="Password" />
+        <button type="submit">Login</button>
+    </form>
+    <a href="/accounts/register/">Register</a>
+{% endblock %}

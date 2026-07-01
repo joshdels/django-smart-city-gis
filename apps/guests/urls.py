@@ -1,4 +1,8 @@
 from django.urls import path
 from . import views
 
-urlpatterns = [path("", views.send_public_form, name="send_public_form")]
+urlpatterns = [
+    path("", views.homepage, name="homepage"),
+    path("inquiry", views.inquiry_page, name="inquiry"),
+    path("submit/", views.send_public_form, name="send_public_form"),
+]
