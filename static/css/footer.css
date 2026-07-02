@@ -1,9 +1,14 @@
 footer {
   background-color: var(--color-dark);
   color: var(--color-text-light);
+  min-height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 footer p {
+  font-size: 1.2rem;
   background-color: var(--color-dark);
   color: var(--color-text-light);
 }

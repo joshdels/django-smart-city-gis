@@ -1,0 +1,14 @@
+.inquiry {
+    display: flex;
+    gap: 1rem;
+    min-height: calc(100vh - (80px + 2rem));
+    padding: 1rem;
+}
+
+.inquiry section {
+    flex: 1
+}
+
+.inquiry div {
+    flex: 1
+}

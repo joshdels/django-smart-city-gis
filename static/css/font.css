@@ -1,0 +1,12 @@
+h1 {
+  font-family: var(--font-header);
+  font-weight: var(--fw-black);
+  font-size: 4rem;
+}
+
+p {
+  font-size: 1.2rem;
+  font-family: var(--font-header);
+  font-weight: var(--fw-regular);
+}
+

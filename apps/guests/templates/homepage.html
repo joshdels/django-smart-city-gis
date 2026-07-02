@@ -1,5 +1,11 @@
-{% extends 'base.html' %}
+{% extends '_base.html' %}
+{% load static %}
+
 {% block title %}TopMap Solutions{% endblock %}
+{% block extra_css %}
+
+    <link rel="stylesheet" href="{% static 'css/_homepage.css' %}">
+{% endblock %}
 {% block content %}
     {% include "components/hero.html" %}
     {% include "components/niched.html" %}

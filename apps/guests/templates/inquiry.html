@@ -1,13 +1,17 @@
-{% extends 'base.html' %}
+{% extends '_base.html' %}
+{% load static %}
+
 {% block title %}Inquiry | TopMap Solutions{% endblock %}
+{% block extra_css %}
+
+<link rel="stylesheet" href="{% static 'css/_inquiry.css' %}">
+{% endblock %}
 {% block content %}
-    <div>
-        <section>
-            <section>
-                <h1>How can we help?</h1>
-                <p>We're ready for all your questions. Send us some details, and a member of our team will be in touch soon.</p>
-            </section>
-            <div id="contact-form">{% include "form/contact.html" %}</div>
-        </section>
-    </div>
+<div class="inquiry">
+    <section>
+        <h1 class="strong">How can we help?</h1>
+        <p class>We're ready for all your questions. Send us some details, and a member of our team will be in touch soon.</p>
+    </section>
+    <div id="contact-form">{% include "form/contact.html" %}</div>
+</div>
 {% endblock %}
