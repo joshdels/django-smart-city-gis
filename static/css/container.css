@@ -1,0 +1,46 @@
+.container {
+  padding: 6rem 20rem;
+}
+
+.container-navbar {
+  padding: 1rem 20rem;
+}
+
+@media (max-width: 1400px) {
+  .container {
+    padding: 6rem 10rem;
+  }
+
+  .container-navbar {
+    padding: 1rem 10rem;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    padding: 6rem 5rem;
+  }
+    .container-navbar {
+    padding: 1rem 5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 4rem 2rem;
+  }
+
+  .container-navbar {
+    padding: 1rem 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 3rem 1.25rem;
+  }
+
+  .container-navbar {
+    padding: 1rem 1.25rem;
+  }
+}

@@ -1,56 +1,93 @@
-@import url("hero.css ");
+/* Hero Section */
+.hero {
+  min-height: var(--min-height);
+  background-color: gray;
+}
 
+.hero a {
+  display: block;
+  width: 100px;
+}
+
+.hero-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 900px;
+}
+
+/* Niched Section */
 .niched {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 5rem 2rem;
   align-items: center;
-  width: 100%;
+  gap: 1.5rem;
   max-width: 800px;
   text-align: center;
 }
 
+/* Customer Section */
 .customer {
   background-color: var(--color-dark);
   color: var(--color-text-light);
-  padding: 2rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
-.customer-icon {
-  filter: brightness(0) saturate(100%) invert(94%) sepia(10%) saturate(237%)
-    hue-rotate(337deg) brightness(96%) contrast(95%);
-  width: 100px;
+.customer main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
+  gap: 2rem;
 }
 
 .customer-card {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  gap: 2rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.customer-icon {
+  display: block;
+  width: 100px;
+  filter: brightness(0) saturate(100%) invert(94%) sepia(10%) saturate(237%)
+    hue-rotate(337deg) brightness(96%) contrast(95%);
+}
+
+/* Assessment Section */
+.assessment {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.assessment main {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  justify-content: center;
+}
+
+.assessment-card {
+  display: flex;
+  text-align: start;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 1000px;
 }
 
 .assessment-icon {
   filter: invert(9%) sepia(19%) saturate(1130%) hue-rotate(356deg)
     brightness(93%) contrast(96%);
-  width: 100px;
-}
-
-.service-icon {
-  filter: brightness(0) saturate(100%) invert(94%) sepia(10%) saturate(237%)
-    hue-rotate(337deg) brightness(96%) contrast(95%);
-  width: 100px;
-}
-
-.cta {
-  margin: 0 auto;
-  display: flex;
-  gap: 1rem;
-  flex-direction: column;
-  justify-content: center;
-  padding: 5rem 2rem;
-  align-items: center;
-  width: 100%;
-  max-width: 800px;
-  text-align: center;
+  width: 150px;
 }

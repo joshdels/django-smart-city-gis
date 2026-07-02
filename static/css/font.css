@@ -10,9 +10,42 @@ h2 {
   font-size: 3rem;
 }
 
+h3 {
+  font-family: var(--font-header);
+  font-weight: var(--fw-black);
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-family: var(--font-body);
+  font-weight: var(--fw-bold);
+  font-size: 1.4rem;
+}
+
 p {
   font-size: 1.2rem;
   font-family: var(--font-header);
   font-weight: var(--fw-regular);
 }
 
+@media (max-width: 786px) {
+  h1 {
+    font-size: 3.2rem;
+  }
+
+  h2 {
+    font-size: 2.4rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
+  }
+
+  h4 {
+    font-size: 1.12rem;
+  }
+
+  p {
+    font-size: 0.96rem;
+  }
+}

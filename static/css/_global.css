@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
 
 @import url("footer.css");
 @import url("navbar.css");
 @import url("button.css");
-@import url('font.css');
+@import url("font.css");
+@import url("container.css");
 
 :root {
   /* Colors */
@@ -23,21 +24,24 @@
 
   /* Spacing/Radius */
   --radius-btn: 8px;
+  --radius-input: 4px;
   --border-hairline: 1px solid rgba(43, 29, 14, 0.3);
+
+  --min-height: calc(100vh - (80px + 2rem));
 }
 
 input {
   background-color: white;
   padding: 0.5rem;
   outline: var(--border-hairline);
-  border-radius: var(--radius-btn);
+  border-radius: var(--radius-input);
 }
 
 textarea {
   background-color: white;
   padding: 0.5rem;
   outline: var(--border-hairline);
-  border-radius: var(--radius-btn);
+  border-radius: var(--radius-input);
 }
 
 html,
