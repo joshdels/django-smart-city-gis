@@ -1,2 +1,56 @@
-@import url('hero.css ');
-@import url('inquiry.css');
+@import url("hero.css ");
+
+.niched {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5rem 2rem;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+}
+
+.customer {
+  background-color: var(--color-dark);
+  color: var(--color-text-light);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.customer-icon {
+  filter: brightness(0) saturate(100%) invert(94%) sepia(10%) saturate(237%)
+    hue-rotate(337deg) brightness(96%) contrast(95%);
+  width: 100px;
+}
+
+.customer-card {
+}
+
+.assessment-icon {
+  filter: invert(9%) sepia(19%) saturate(1130%) hue-rotate(356deg)
+    brightness(93%) contrast(96%);
+  width: 100px;
+}
+
+.service-icon {
+  filter: brightness(0) saturate(100%) invert(94%) sepia(10%) saturate(237%)
+    hue-rotate(337deg) brightness(96%) contrast(95%);
+  width: 100px;
+}
+
+.cta {
+  margin: 0 auto;
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5rem 2rem;
+  align-items: center;
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+}

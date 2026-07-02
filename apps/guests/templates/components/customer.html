@@ -1,12 +1,26 @@
+{% load static %}
 <section class="customer">
     <h2>Who We Help</h2>
-    <ul>
-        <li>City & Municipal Governments</li>
-        <li>Assessor's Offices & Tax Mapping Divisions</li>
-        <li>Planning & Development Offices</li>
-        <li>Engineering Offices</li>
-        <li>Surveying & Engineering Firms</li>
-        <li>Real Estate Developers</li>
-        <li>Utility Companies</li>
-    </ul>
+    <main>
+        <div class="customer-card">
+            <img class="customer-icon" src="{% static 'icons/company.png' %}" alt="company">
+            <h3>City & Municipal Governments</h3>
+        </div>
+        <div class="customer-card">
+            <img class="customer-icon" src="{% static 'icons/map-and-location.png' %}" alt="map-and-location">
+            <h3>Assessor's Offices & Tax Mapping Divisions</h3>
+        </div>
+        <div class="customer-card">
+            <img class="customer-icon" src="{% static 'icons/agreement.png' %}" alt="agreement">
+            <h3>Planning & Development Offices</h3>
+        </div>
+        <div class="customer-card">
+            <img class="customer-icon" src="{% static 'icons/model.png' %}" alt="model">
+            <h3>Surveying & Engineering Firms</h3>
+        </div>
+        <div class="customer-card">
+            <img class="customer-icon" src="{% static 'icons/real-estate.png' %}" alt="real-estate">
+            <h3>Real Estate Developers</h3>
+        </div>
+    </main>
 </section>

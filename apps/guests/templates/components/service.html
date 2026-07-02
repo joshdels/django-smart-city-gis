@@ -1,11 +1,31 @@
+{% load static %}
 <section class="customer">
     <h2>How We Can Help</h2>
-    <ul>
-        <li>Technical Description to GIS Conversion</li>
-        <li>Land Parcel Data Cleaning & Validation</li>
-        <li>CAD to GIS Data Migration</li>
-        <li>Bulk Parcel Processing & Automation</li>
-        <li>Web GIS Development</li>
-        <li>Enterprise GIS Consulting</li>
-    </ul>
+    <main>
+        <div class="customer-card">
+            <img class="customer-icon" src="{% static 'icons/talk.png' %}" alt="talk">
+            <h3>Enterprise GIS Consulting</h3>
+        </div>
+        <div class="customer-card">
+            <img class="customer-icon" src="{% static 'icons/gis.png' %}" alt="gis">
+            <h3>Technical Description to GIS Conversion</h3>
+        </div>
+        <div class="customer-card">
+            <img class="customer-icon" src="{% static 'icons/cad.png' %}" alt="cad">
+            <h3>CAD to GIS Data Migration</h3>
+        </div>
+        <div class="customer-card">
+            <img class="customer-icon" src="{% static 'icons/data-cleaning.png' %}" alt="data-cleaning">
+            <h3>Land Parcel Data Cleaning & Validation</h3>
+        </div>
+
+        <div class="customer-card">
+            <img class="customer-icon" src="{% static 'icons/stack.png' %}" alt="stack">
+            <h3>Bulk Parcel Processing & Automation</h3>
+        </div>
+        <div class="customer-card">
+            <img class="customer-icon" src="{% static 'icons/group.png' %}" alt="group">
+            <h3>Web GIS Development</h3>
+        </div>
+    </main>
 </section>

@@ -1,6 +1,6 @@
 .hero {
   min-height: calc(100vh - (80px + 2rem));
-  background-color: red;
+  background-color: gray;
   padding: 2rem;
 }
 
