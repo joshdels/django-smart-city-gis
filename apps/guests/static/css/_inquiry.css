@@ -16,11 +16,14 @@
   max-width: 800px;
 }
 
+form > div {
+  margin-bottom: 1rem;
+}
 
 #contact-form input,
 #contact-form textarea {
-    width: 100%;
-    box-sizing: border-box;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 @media (max-width: 1200px) {

@@ -1,56 +1,55 @@
 <section>
-    <form hx-post="{% url 'send_public_form' %}"
-          hx-target="#contact-form"
-          hx-swap="outerHTML">
+    <form action="{% url 'send_public_form' %}" method="post">
         {% csrf_token %}
         <div>
             <label for="name">Name *</label>
-            <br>
-            <input type="text" id="name" name="name" placeholder="Your name" required>
+            <input type="text"
+                   id="name"
+                   name="name"
+                   placeholder="Your name"
+                   value="{{ name }}"
+                   autocomplete="name"
+                   required>
         </div>
-        <br>
         <div>
             <label for="organization">Organization</label>
-            <br>
             <input type="text"
                    id="organization"
                    name="organization"
+                   value="{{ organization }}"
+                   autocomplete="organization"
                    placeholder="Company, Municipality, or Individual">
         </div>
-        <br>
         <div>
             <label for="email">Email *</label>
-            <br>
             <input type="email"
                    id="email"
                    name="email"
                    placeholder="you@example.com"
+                   autocomplete="email"
+                   value="{{ email }}"
                    required>
         </div>
-        <br>
         <div>
             <label for="phone">Phone</label>
-            <br>
             <input type="tel"
                    id="phone"
                    name="phone"
                    minlength="10"
-                   maxlength="12"
-                   placeholder="+63 912 345 6789">
+                   maxlength="20"
+                   value="{{ phone }}"
+                   autocomplete="tel"
+                   placeholder="63 912 345 6889">
         </div>
-        <br>
         <div>
             <label for="inquiry">Inquiry *</label>
-            <br>
             <textarea id="inquiry"
                       name="inquiry"
                       rows="6"
                       placeholder="Tell us about your project or how we can help..."
-                      required></textarea>
+                      required>{{ inquiry }}</textarea>
         </div>
-        <br>
         <button class="btn-primary" type="submit">Send Inquiry</button>
-        
         {% if error %}
             <div class="alert error">{{ error }}</div>
         {% endif %}

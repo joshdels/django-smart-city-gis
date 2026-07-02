@@ -1,0 +1,32 @@
+.errors {
+  display: flex;
+  min-height: 70vh;
+  justify-content: center;
+  gap: 4rem;
+  align-items: center;
+}
+
+.errors a {
+  margin-top: 1rem;
+}
+
+.errors img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  display: block;
+}
+
+.errors main {
+  flex: 1;
+}
+
+.errors section {
+  flex: 2;
+}
+
+@media (max-width: 768px) {
+  .errors {
+    flex-direction: column;
+  }
+}

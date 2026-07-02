@@ -1,0 +1,18 @@
+{% extends '_base.html' %}
+{% load static %}
+{% block title %}Not Found| TopMap Solutions{% endblock %}
+{% block extra_css %}{% endblock %}
+{% block content %}
+    <section class="container">
+        <div class="errors">
+            <main>
+                <img src="{% static 'icons/depression.png' %}" alt="error">
+            </main>
+            <section>
+                <h1>404.</h1>
+                <p>We couldn't find the page you're looking for.</p>
+                <a class="btn-primary" href="{% url 'homepage' %}">Back to Home</a>
+            </section>
+        </div>
+    </section>
+{% endblock %}

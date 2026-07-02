@@ -22,3 +22,15 @@
   border-radius: var(--radius-btn);
   padding: 10px 20px;
 }
+
+.btn-none {
+  text-decoration: none;
+  color: var(--color-dark);
+  transition: all 0.2s ease-in-out;
+  font-weight: var(--fw-regular);
+}
+
+.btn-none:hover {
+  color: var(--color-accent);
+  cursor: pointer;
+}

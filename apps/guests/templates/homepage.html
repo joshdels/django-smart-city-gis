@@ -1,9 +1,7 @@
 {% extends '_base.html' %}
 {% load static %}
-
 {% block title %}TopMap Solutions{% endblock %}
 {% block extra_css %}
-
     <link rel="stylesheet" href="{% static 'css/_homepage.css' %}">
 {% endblock %}
 {% block content %}
@@ -13,4 +11,7 @@
     {% include "components/assessment.html" %}
     {% include "components/service.html" %}
     {% include "components/cta.html" %}
+{% endblock %}
+{% block scripts %}
+    <script src="{% static 'js/homepage.js' %}"></script>
 {% endblock %}

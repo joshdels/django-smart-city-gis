@@ -9,4 +9,5 @@ dependencies = [
     "djlint>=1.40.0",
     "psycopg[binary]>=3.3.4",
     "python-dotenv>=1.2.2",
+    "whitenoise>=6.12.0",
 ]

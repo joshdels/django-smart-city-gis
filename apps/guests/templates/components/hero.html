@@ -1,11 +1,16 @@
+{% load static %}
 <section class="hero">
-    <img src="" alt="">
-    <div class="container hero-text">
-        <h1>Modernize Your Land Records</h1>
-        <p>
-            Transform technical descriptions, CAD drawings, and paper parcel records
-            into accurate GIS-ready data for local governments and organizations.
-        </p>
-        <a class="btn-primary" href="inquiry">Get in touch</a>
+    <img src="{% static 'images/city-planning.jpg' %}"
+         class="hero-images"
+         alt="images">
+    <div class="container">
+        <div class="hero-card">
+            <h1>Modernize Your Land Records</h1>
+            <p>
+                Transform technical descriptions, CAD drawings, and paper parcel records
+                into accurate GIS-ready data for local governments and organizations.
+            </p>
+            <a class="btn-primary" href="inquiry">Get in touch</a>
+        </div>
     </div>
 </section>
