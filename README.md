@@ -10,6 +10,8 @@ this is a monolith application that handles land planning offices
 4. postgresql / postgis
 5. htmx, css, vanila js
 6. s3 backblaze (cloud storage)
+7. WhiteNoise
+8. Vultr & Nginx
 
 ## Project Structure
 
