@@ -6,15 +6,15 @@ services:
     container_name: django-smart-city-gis
 
     env_file:
-      - ../.env
+      - ../.env.prod
 
     ports:
       - "8002:8000"
       
     restart: unless-stopped
-#     networks:
-#       - gis_centralize_db
+    networks:
+      - gis_centralize_db
 
-# networks:
-#   gis_centralize_db:
-#     external: true
+networks:
+  gis_centralize_db:
+    external: true
