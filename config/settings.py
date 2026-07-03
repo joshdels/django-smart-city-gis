@@ -62,6 +62,7 @@ ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
     "topmapsolutions.com",
+    "www.topmapsolutions.com",
 ]
 
 if IS_PROD:
@@ -76,6 +77,7 @@ if IS_PROD:
     SECURE_HSTS_SECONDS = 3600
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
     SECURE_HSTS_PRELOAD = True
+    USE_X_FORWARDED_HOST = True
 
 # ----------------------------
 # INSTALLED APPS
@@ -206,4 +208,11 @@ STATICFILES_DIRS = [
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # temp
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+STORAGES = {
+    "default": {
+        "BACKEND": "django.core.files.storage.FileSystemStorage",
+    },
+    "staticfiles": {
+        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+    },
+}
