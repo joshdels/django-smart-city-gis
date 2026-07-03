@@ -69,4 +69,4 @@ def inquiry_success(request):
 
 # temp for testing
 def test(request):
-    return render(request, "contact_success.html")
+    return render(request, "404.html")

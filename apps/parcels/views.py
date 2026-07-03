@@ -48,6 +48,7 @@ def geographic_boundaries(request):
     )
 
 
+@login_required
 def regions(request):
     data = (
         Boundary.objects.values_list("region_name", flat=True)
@@ -58,6 +59,7 @@ def regions(request):
     return JsonResponse(list(data), safe=False)
 
 
+@login_required
 def provinces(request):
     data = (
         Boundary.objects.values_list("province_name", flat=True)
@@ -68,6 +70,7 @@ def provinces(request):
     return JsonResponse(list(data), safe=False)
 
 
+@login_required
 def cities(request):
     data = (
         Boundary.objects.values_list("city_name", flat=True)
@@ -78,6 +81,7 @@ def cities(request):
     return JsonResponse(list(data), safe=False)
 
 
+@login_required
 def barangays(request):
     data = (
         Boundary.objects.values_list("barangay_name", flat=True)
