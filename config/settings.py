@@ -216,3 +216,25 @@ STORAGES = {
         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
     },
 }
+
+# ----------------------------
+# STATIC & MEDIA
+# ----------------------------
+# if IS_PROD:
+#     EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+#     EMAIL_HOST = os.getenv("BREVO_HOST")
+#     EMAIL_PORT = int(os.getenv("BREVO_PORT", 587))
+#     EMAIL_USE_TLS = True
+#     EMAIL_HOST_USER = os.getenv("BREVO_SMTP_LOGIN")
+#     EMAIL_HOST_PASSWORD = os.getenv("BREVO_SMTP_PASSWORD")
+# else:
+#     EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+
+# tests lng to dummy emails
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = os.getenv("BREVO_HOST")
+EMAIL_PORT = int(os.getenv("BREVO_PORT", 587))
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = os.getenv("BREVO_SMTP_LOGIN")
+EMAIL_HOST_PASSWORD = os.getenv("BREVO_SMTP_PASSWORD")

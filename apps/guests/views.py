@@ -2,6 +2,9 @@ from datetime import timedelta
 
 from django.shortcuts import redirect, render
 from django.utils import timezone
+from django.template.loader import render_to_string
+from django.utils.html import strip_tags
+from django.core.mail import send_mail, EmailMultiAlternatives
 
 from .models import Guest
 
@@ -22,33 +25,77 @@ def send_public_form(request):
     if request.method != "POST":
         return redirect("inquiry")
 
-    email = request.POST["email"]
+    name = request.POST.get("name", "")
+    email = request.POST.get("email", "")
+    organization = request.POST.get("organization", "Individual")
+    phone = request.POST.get("phone", "")
+    inquiry = request.POST.get("inquiry", "")
 
     cooldown = Guest.objects.filter(
         email=email,
         created_at__gte=timezone.now() - timedelta(hours=24),
     ).exists()
 
-    if cooldown:
-        return render(
-            request,
-            "inquiry.html",
-            {
-                "error": "You have already submitted an inquiry within the last 24 hours.",
-                "name": request.POST.get("name", ""),
-                "organization": request.POST.get("organization", ""),
-                "email": email,
-                "phone": request.POST.get("phone", ""),
-                "inquiry": request.POST.get("inquiry", ""),
-            },
-        )
+    # if cooldown:
+    #     return render(
+    #         request,
+    #         "inquiry.html",
+    #         {
+    #             "error": "You have already submitted an inquiry within the last 24 hours.",
+    #             "name": name,
+    #             "organization": organization,
+    #             "email": email,
+    #             "phone": phone,
+    #             "inquiry": inquiry,
+    #         },
+    #     )
+    
+    # Send email to staff
+    send_mail(
+        subject="Client Inquiry",
+        message=f"""
+            New Inquiry Received
 
+            Name: {name}
+            Organization: {organization}
+            Email: {email}
+            Phone: {phone}
+
+            Inquiry:
+            {inquiry}
+
+            """.strip(),
+        from_email=email,
+        recipient_list=["joshdels@topmapsolutions.com"],
+        fail_silently=False,
+    )
+
+    # Send email to customer
+    html_message = render_to_string(
+        "email/customer_inquiry.html",
+        {
+            "name": name,
+            "email": email,
+            "phone": phone,
+            "organization": organization,
+            "inquiry": inquiry,
+        },
+    )
+    plain_message = strip_tags(html_message)
+
+    message = EmailMultiAlternatives(
+        subject="Inquiry Received",
+        body=plain_message,
+        from_email="noreply@topmapsolutions.com",
+        to=[email],
+    )
+
+    message.attach_alternative(html_message, "text/html")
+    message.send()
+
+    # Send to database
     Guest.objects.create(
-        organization=request.POST.get("organization") or "Individual",
-        name=request.POST["name"],
-        email=email,
-        inquiry=request.POST["inquiry"],
-        phone=request.POST["phone"],
+        name=name, email=email, organization=organization, phone=phone, inquiry=inquiry
     )
 
     request.session["submitted_email"] = email
@@ -66,7 +113,3 @@ def inquiry_success(request):
         "contact_success.html",
         {"email": email},
     )
-
-# temp for testing
-def test(request):
-    return render(request, "404.html")

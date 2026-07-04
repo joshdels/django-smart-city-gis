@@ -115,3 +115,10 @@
     brightness(93%) contrast(96%);
   width: 150px;
 }
+
+@media (max-width: 900px ) {
+  .hero-card {
+  max-width: 600px;
+  padding: 1rem;
+}
+}
