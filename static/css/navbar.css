@@ -13,18 +13,30 @@ nav {
 
 nav a {
   text-decoration: none;
-
   font-weight: var(--fw-black);
 }
 
 nav .nav-title {
+  display: flex;
+  align-items: center;
   font-weight: var(--fw-black);
   font-family: var(--font-header);
   color: var(--color-darl);
-  font-size: 2rem;
+  font-size: 2.5rem;
+  gap: 2rem;
 }
 
 nav div {
   padding: 1rem;
   border-left: 2px solid var(--color-dark);
+}
+
+nav img {
+  width: 80px;
+}
+
+@media (max-width: 800px) {
+  .nav-title span {
+    display: none;
+  }
 }
