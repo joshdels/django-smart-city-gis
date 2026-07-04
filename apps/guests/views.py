@@ -54,7 +54,7 @@ def send_public_form(request):
     send_mail(
         subject="Client Inquiry",
         message=f"""
-            New Inquiry Received
+            New Inquiry Received (TopMap Solutions)
 
             Name: {name}
             Organization: {organization}
@@ -65,7 +65,7 @@ def send_public_form(request):
             {inquiry}
 
             """.strip(),
-        from_email=email,
+        from_email="noreply@topmapsolutions.com",
         recipient_list=["joshdels@topmapsolutions.com"],
         fail_silently=False,
     )
