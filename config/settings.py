@@ -91,9 +91,10 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django.contrib.gis",
     # Apps
-    "apps.parcels",
     "apps.accounts",
     "apps.guests",
+    "apps.boundaries",
+    "apps.parcels",
 ]
 
 # ----------------------------

@@ -57,15 +57,24 @@ CREATE EXTENSION postgis
 ### Environment Structure
 
 ```
-ENV=dev
+ENV=dev | prod
 
 SECRET_KEY="django-key"
 
+# Database (postgres)
 DB_NAME=
 DB_USER=
 DB_PASSWORD=
 DB_HOST=
 DB_PORT=
+
+# Brevo (email for prod)
+BREVO_HOST=
+BREVO_PORT=
+BREVO_SMTP_LOGIN=
+BREVO_SMTP_PASSWORD=
+WEBSITE_EMAIL=
+
 ```
 
 ### Django Run Commands
