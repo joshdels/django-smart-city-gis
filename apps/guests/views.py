@@ -36,19 +36,19 @@ def send_public_form(request):
         created_at__gte=timezone.now() - timedelta(hours=24),
     ).exists()
 
-    # if cooldown:
-    #     return render(
-    #         request,
-    #         "inquiry.html",
-    #         {
-    #             "error": "You have already submitted an inquiry within the last 24 hours.",
-    #             "name": name,
-    #             "organization": organization,
-    #             "email": email,
-    #             "phone": phone,
-    #             "inquiry": inquiry,
-    #         },
-    #     )
+    if cooldown:
+        return render(
+            request,
+            "inquiry.html",
+            {
+                "error": "You have already submitted an inquiry within the last 24 hours.",
+                "name": name,
+                "organization": organization,
+                "email": email,
+                "phone": phone,
+                "inquiry": inquiry,
+            },
+        )
     
     # Send email to staff
     send_mail(
