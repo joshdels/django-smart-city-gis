@@ -5,6 +5,9 @@ User = get_user_model()
 
 
 def login_view(request):
+    print(request.user)
+    print(request.user.is_authenticated)
+    print(request.headers.get("Authorization"))
     if request.method == "POST":
         username = request.POST.get("username")
         password = request.POST.get("password")
