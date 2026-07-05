@@ -8,22 +8,43 @@ class Owner(models.Model):
     first_name = models.CharField(max_length=200)
     middle_name = models.CharField(max_length=200, blank=True, null=True)
     last_name = models.CharField(max_length=200)
+    date_owned = models.DateField(blank=True, null=True)
 
     status = models.CharField(max_length=100, default="active")
-
-    def __str__(self):
-        return f"{self.first_name} {self.last_name}"
+    created_at = models.DateField(auto_now_add=True)
 
 
-class Parcels(models.Model):
+class TaxInformation(models.Model):
+    tax_declaration = models.CharField(max_length=255)
+    tax_payment_status = models.CharField(
+        max_length=100,
+    )
+
+    market_value = models.FloatField(blank=True, null=True)
+    classification = models.CharField(max_length=100, blank=True)
+
+    status = models.CharField(max_length=100, default="active")
+    created_at = models.DateField(auto_now_add=True)
+
+
+class Parcel(models.Model):
     parcel_id = models.CharField(max_length=200, unique=True)
 
+    area_auto = models.FloatField(blank=True, null=True)
+    area_declared = models.FloatField(blank=True, null=True)
     geom = gis_models.PolygonField(srid=4326)
 
     ownership = models.ForeignKey(
         Owner, on_delete=models.SET_NULL, null=True, blank=True, related_name="parcels"
     )
 
+    tax_information = models.ForeignKey(
+        TaxInformation,
+        on_delete=models.SET_NULL,
+        null=True,
+        blank=True,
+        related_name="parcels",
+    )
 
-class TaxInformation(models.Model):
-    pass
+    status = models.CharField(max_length=100, default="active")
+    created_at = models.DateField(auto_now_add=True)
