@@ -19,7 +19,7 @@ this is a monolith application that handles land planning offices
 .docker /
     │
     ├── Dockerfile
-    |── docker-compose.yml
+    └── docker-compose.yml
 
 .github /
     │
@@ -27,20 +27,31 @@ this is a monolith application that handles land planning offices
         │
         └── github/workflows
 
-
 apps/
     │
-    ├── accounts/        # users, roles, auth
-    ├── parcels/         # GIS core (MAIN APP)
-    ├── owners/          # land owners
-    └── dashboard/       # UI pages, filters, map views
+    ├── accounts/                # users, roles, auth
+    ├── guests/                  # customer landing page, email support
+    ├── boundaries/              # political boundaries 
+    ├── parcels/                 # GIS core (MAIN APP)
+    ├── owners/                  # land owners
+    └── dashboard/               # UI pages, filters, map views
 
-config/                  # users, roles, auth
-templates/               # global html
-static/                  # global styles and images
+config/                          # django settings
+templates/                       # global html
+static/                          # global styles/js and images
+   │
+   ├── css/  
+   ├── icons/
+   ├── images/
+   ├── js/  
+   └── favicon.ico
 
-plans/                   # pre planing stuffs
-.env                     # environment
+plans/                           # pre planing stuffs
+.env                             # environment
+
+manage.py                        # default django command
+pyproject.toml                   # uv settings
+uv.lock
 ```
 
 ## To start
@@ -88,5 +99,5 @@ python manage.py createsuperuser
 
 to ingest gis files
 ```
-python manage.py import_gis <shapefile path> <table_name>
+python manage.py import_boundaries <shapefile path> <table_name>
 ```
