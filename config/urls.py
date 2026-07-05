@@ -23,4 +23,5 @@ urlpatterns = [
     path("", include("apps.guests.urls")),
     path("accounts/", include("apps.accounts.urls")),
     path("parcels/", include("apps.parcels.urls")),
+    path("boundaries/", include("apps.boundaries.urls")),
 ]

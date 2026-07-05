@@ -72,11 +72,13 @@ if IS_PROD:
     ]
     SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
     SECURE_SSL_REDIRECT = True
-    SESSION_COOKIE_SECURE = True
-    CSRF_COOKIE_SECURE = True
-    SECURE_HSTS_SECONDS = 3600
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
     SECURE_HSTS_PRELOAD = True
+    SECURE_HSTS_SECONDS = 3600
+    SESSION_COOKIE_SECURE = True
+    SESSION_COOKIE_HTTPONLY = True
+    CSRF_COOKIE_SECURE = True
+    CSRF_COOKIE_HTTPONLY = False
     USE_X_FORWARDED_HOST = True
 
 # ----------------------------
@@ -91,9 +93,10 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django.contrib.gis",
     # Apps
-    "apps.parcels",
     "apps.accounts",
     "apps.guests",
+    "apps.boundaries",
+    "apps.parcels",
 ]
 
 # ----------------------------
@@ -220,20 +223,14 @@ STORAGES = {
 # ----------------------------
 # STATIC & MEDIA
 # ----------------------------
-# if IS_PROD:
-#     EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-#     EMAIL_HOST = os.getenv("BREVO_HOST")
-#     EMAIL_PORT = int(os.getenv("BREVO_PORT", 587))
-#     EMAIL_USE_TLS = True
-#     EMAIL_HOST_USER = os.getenv("BREVO_SMTP_LOGIN")
-#     EMAIL_HOST_PASSWORD = os.getenv("BREVO_SMTP_PASSWORD")
-# else:
-#     EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+if IS_PROD:
+    EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+    EMAIL_HOST = os.getenv("BREVO_HOST")
+    EMAIL_PORT = int(os.getenv("BREVO_PORT", 587))
+    EMAIL_USE_TLS = True
+    EMAIL_HOST_USER = os.getenv("BREVO_SMTP_LOGIN")
+    EMAIL_HOST_PASSWORD = os.getenv("BREVO_SMTP_PASSWORD")
+else:
+    EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 
-EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = os.getenv("BREVO_HOST")
-EMAIL_PORT = int(os.getenv("BREVO_PORT", 587))
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = os.getenv("BREVO_SMTP_LOGIN")
-EMAIL_HOST_PASSWORD = os.getenv("BREVO_SMTP_PASSWORD")
