@@ -1,0 +1,11 @@
+{% extends '_map_base.html' %}
+{% load static %}
+{% block title %}Parcel Map | TopMap{% endblock %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/_map.css' %}">
+{% endblock %}
+{% block content %}
+    <nav>Location</nav>
+    <div id="map"></div>
+{% endblock %}
+{% block scripts %}{% endblock %}

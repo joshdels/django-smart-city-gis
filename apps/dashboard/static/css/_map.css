@@ -1,0 +1,15 @@
+#map {
+  min-height: calc(100vh - 100px);
+  background-color: aquamarine;
+}
+
+nav {
+  height: 100px;
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

@@ -97,6 +97,7 @@ INSTALLED_APPS = [
     "apps.guests",
     "apps.boundaries",
     "apps.parcels",
+    "apps.dashboard",
 ]
 
 # ----------------------------
