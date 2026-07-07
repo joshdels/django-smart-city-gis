@@ -1,11 +1,14 @@
 #map {
   min-height: calc(100vh - 100px);
-  background-color: aquamarine;
+  background-color: rgb(179, 179, 179);
 }
 
-nav {
+.map-nav {
   height: 100px;
   box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 2rem;
 }
 
 * {

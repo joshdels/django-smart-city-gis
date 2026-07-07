@@ -5,9 +5,6 @@ User = get_user_model()
 
 
 def login_view(request):
-    print(request.user)
-    print(request.user.is_authenticated)
-    print(request.headers.get("Authorization"))
     if request.method == "POST":
         username = request.POST.get("username")
         password = request.POST.get("password")
@@ -16,9 +13,9 @@ def login_view(request):
 
         if user:
             login(request, user)
-            return redirect("home")
+            return redirect("map_dashboard")
 
-        return render(request, "accounts/login.html", {"error": "Invalid credentails"})
+        return render(request, "login.html", {"error": "Invalid credentails"})
 
     return render(request, "login.html")
 
@@ -41,6 +38,6 @@ def register_view(request):
         user = User.objects.create_user(username=username, password=password)
 
         login(request, user)
-        return redirect("home")
+        return redirect("map_dashboard")
 
     return render(request, "register.html")

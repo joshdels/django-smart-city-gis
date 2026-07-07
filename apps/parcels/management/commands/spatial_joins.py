@@ -23,7 +23,7 @@ class Command(BaseCommand):
                     );
                 """)
 
-                self.stdout.write(self.style.SUCCESS("Successfully assigned barangays."))
+                self.stdout.write(self.style.SUCCESS("Successfully assigned barangays to parcels"))
 
                 self.stdout.write("Calculating parcel areas...")
 
@@ -34,7 +34,7 @@ class Command(BaseCommand):
                     );
                 """)
 
-                self.stdout.write(self.style.SUCCESS("Successfully caluclated Parcel areas"))
+                self.stdout.write(self.style.SUCCESS("Successfully caluclated areas in m2 to parcels"))
 
         except DatabaseError as e:
             raise CommandError(f"Database error while enriching parcels: {e}")

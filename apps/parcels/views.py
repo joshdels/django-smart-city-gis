@@ -12,7 +12,7 @@ from apps.accounts import models as accounts_model
 
 #         queryset = boundary
 
-
+@login_required
 def show_parcels(request):
     # ill filter muna per barangays
     barangays = request.GET.getlist("barangay")
