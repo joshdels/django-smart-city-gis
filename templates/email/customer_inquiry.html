@@ -1,147 +1,64 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-  <body
-    style="
-      margin: 0;
-      padding: 24px;
-      background-color: #ebe7df;
-      font-family: Inter, Helvetica Neue, Arial, sans-serif;
-      color: #2b1d0e;
-    "
-  >
-    <div
-      style="
-        max-width: 600px;
-        margin: 0 auto;
-        background: #ffffff;
-        border-radius: 12px;
-        overflow: hidden;
-        border: 1px solid #ddd4c8;
-      "
-    >
-      <!-- Header -->
-      <div
-        style="
-          background: #2b1d0e;
-          padding: 32px 24px;
-          text-align: center;
-        "
-      >
-        <img
-          src="https://f005.backblazeb2.com/file/topmap-solutions/utilities/topmap_logo.svg"
-          alt="TopMap Solutions"
-          style="
-            max-width: 180px;
-            height: auto;
-            margin-bottom: 16px;
-          "
-        />
-
-        <h2
-          style="
-            margin: 0;
-            color: #ebe7df;
-            font-size: 24px;
-            font-weight: 700;
-          "
-        >
-          Inquiry Received
-        </h2>
-      </div>
-
-      <!-- Body -->
-      <div style="padding: 32px">
-        <h3
-          style="
-            margin-top: 0;
-            color: #2b1d0e;
-            font-size: 22px;
-          "
-        >
-          Hello {{ name }},
-        </h3>
-
-        <p
-          style="
-            font-size: 15px;
-            line-height: 1.8;
-            margin-bottom: 16px;
-          "
-        >
-          Thank you for reaching out to <strong>TopMap Solutions</strong>. We
-          appreciate your interest in working with us.
-        </p>
-
-        <p
-          style="
-            font-size: 15px;
-            line-height: 1.8;
-            margin-bottom: 24px;
-          "
-        >
-          We have successfully received your inquiry and our team is currently
-          reviewing it. If we believe we're a good fit for your project, we'll
-          contact you within <strong>1–2 business days</strong>.
-        </p>
-
-        <div
-          style="
-            background: #ebe7df;
-            border-left: 4px solid #f4530a;
-            padding: 16px;
-            border-radius: 6px;
-            margin-bottom: 24px;
-          "
-        >
-          <strong>Reminder:</strong> Please keep an eye on both your
-          <strong>Inbox</strong> and <strong>Spam</strong> folders, as our reply
-          may occasionally be filtered by your email provider.
+    <body style="margin: 0;
+                 padding: 24px;
+                 background-color: #ebe7df;
+                 font-family: Inter, Helvetica Neue, Arial, sans-serif;
+                 color: #2b1d0e">
+        <div style="max-width: 600px;
+                    margin: 0 auto;
+                    background: #ffffff;
+                    border-radius: 12px;
+                    overflow: hidden;
+                    border: 1px solid #ddd4c8">
+            <!-- Header -->
+            <div style="background: #2b1d0e; padding: 32px 24px; text-align: center">
+                <img src="https://f005.backblazeb2.com/file/topmap-solutions/utilities/topmap_logo.svg"
+                     alt="TopMap Solutions"
+                     style="max-width: 180px;
+                            height: auto;
+                            margin-bottom: 16px" />
+                <h2 style="margin: 0; color: #ebe7df; font-size: 24px; font-weight: 700">Inquiry Received</h2>
+            </div>
+            <!-- Body -->
+            <div style="padding: 32px">
+                <h3 style=" margin-top: 0; color: #2b1d0e; font-size: 22px; ">Hello {{ name }},</h3>
+                <p style=" font-size: 15px; line-height: 1.8; margin-bottom: 16px; ">
+                    Thank you for reaching out to <strong>TopMap Solutions</strong>. We
+                    appreciate your interest in working with us.
+                </p>
+                <p style=" font-size: 15px; line-height: 1.8; margin-bottom: 24px; ">
+                    We have successfully received your inquiry and our team is currently
+                    reviewing it. If we believe we're a good fit for your project, we'll
+                    contact you within <strong>1–2 business days</strong>.
+                </p>
+                <div style="background: #ebe7df;
+                            border-left: 4px solid #f4530a;
+                            padding: 16px;
+                            border-radius: 6px;
+                            margin-bottom: 24px">
+                    <strong>Reminder:</strong> Please keep an eye on both your
+                    <strong>Inbox</strong> and <strong>Spam</strong> folders, as our reply
+                    may occasionally be filtered by your email provider.
+                </div>
+                <hr style="border: none; border-top: 1px solid #ddd4c8; margin: 32px 0" />
+                <h4 style=" margin-bottom: 12px; color: #2b1d0e; ">Your Inquiry</h4>
+                <div style="background: #f8f6f2;
+                            padding: 16px;
+                            border-radius: 8px;
+                            white-space: pre-line;
+                            font-size: 14px;
+                            line-height: 1.2;
+                            border: 1px solid #ddd4c8">{{ inquiry }}</div>
+            </div>
+            <!-- Footer -->
+            <div style="background: #2b1d0e;
+                        color: #ebe7df;
+                        text-align: center;
+                        padding: 20px;
+                        font-size: 13px">
+                © {% now "Y" %} <strong>TopMap Solutions</strong>. All rights reserved.
+            </div>
         </div>
-
-        <hr
-          style="
-            border: none;
-            border-top: 1px solid #ddd4c8;
-            margin: 32px 0;
-          "
-        />
-
-        <h4
-          style="
-            margin-bottom: 12px;
-            color: #2b1d0e;
-          "
-        >
-          Your Inquiry
-        </h4>
-
-        <div
-          style="
-            background: #f8f6f2;
-            padding: 16px;
-            border-radius: 8px;
-            white-space: pre-line;
-            font-size: 14px;
-            line-height: 1.2;
-            border: 1px solid #ddd4c8;
-          "
-        >
-          {{ inquiry }}
-        </div>
-      </div>
-
-      <!-- Footer -->
-      <div
-        style="
-          background: #2b1d0e;
-          color: #ebe7df;
-          text-align: center;
-          padding: 20px;
-          font-size: 13px;
-        "
-      >
-        © {% now "Y" %} <strong>TopMap Solutions</strong>. All rights reserved.
-      </div>
-    </div>
-  </body>
+    </body>
 </html>

@@ -1,11 +1,10 @@
 <nav class="map-nav">
-  <header>
-    <h3>{{ user.organization.name|default:"No Organization" }}</h3>
-    <p>{{ user.office.name}}</p>
-  </header>
-
-  <form action="{% url 'logout' %}" method="post">
-    {% csrf_token %}
-    <button  class="btn-primary" type="submit">logout</button>
-  </form>
+    <header>
+        <h3>{{ user.organization.name|default:"No Organization" }}</h3>
+        <p>{{ user.office.name }}</p>
+    </header>
+    <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <button class="btn-primary" type="submit">logout</button>
+    </form>
 </nav>
