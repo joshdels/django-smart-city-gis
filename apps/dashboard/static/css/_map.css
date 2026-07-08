@@ -1,38 +1,42 @@
+@import url("map-nav.css");
+
 #map {
   min-height: calc(100vh - 80px);
   background-color: rgb(179, 179, 179);
 }
-.map-nav {
-  height: 80px;
-  box-sizing: border-box;
+
+section {
+  min-height: calc(100vh - 80px);
   display: flex;
-  justify-content: space-between;
-  padding: 0 2rem;
 }
 
-.map-nav a {
-  text-decoration: none;
-  color: inherit;
+section #map {
+  flex: 1;
 }
 
-.map-nav section div {
+section main {
+  flex: 1;
+  border-right: 1px solid var(--color-dark);
   display: flex;
   flex-direction: column;
-  border-left: none;
-  align-items: flex-end;
+  justify-content: space-between;
 }
 
-.map-nav section {
-  display: flex;
-  align-items: center;
+.parcel-detail {
+  padding: 2rem;
 }
 
-.map-nav section p {
-  font-size: 1.2rem;
-  font-weight: 700;
-  text-transform: capitalize;
+footer {
+  min-height: 120px;
 }
 
-.map-nav section span {
-  font-size: 0.8rem;
+footer img {
+  width: 60px;
+}
+
+@media (max-width: 400px) {
+  section {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 }
