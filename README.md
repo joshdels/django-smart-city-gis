@@ -2,6 +2,9 @@
 
 this is a monolith application that handles land planning offices
 
+![Customer](static/brand/image.png)
+![Map](static/brand/image-map.png)
+
 ## Tech Stack
 
 1. django/geodjango
@@ -12,6 +15,7 @@ this is a monolith application that handles land planning offices
 6. s3 backblaze (cloud storage)
 7. WhiteNoise
 8. Vultr & Nginx
+9. gdal/ogr
 
 ## Project Structure
 
@@ -99,5 +103,6 @@ python manage.py createsuperuser
 
 to ingest gis files
 ```
-python manage.py import_boundaries <shapefile path> <table_name>
+python manage.py import_boundaries <shapefile path> <table_name> ----> adds ingest shp using gdal/ogr
+python manage.py spatial_join ----> adds neccessary area and boundaries
 ```

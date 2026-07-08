@@ -97,6 +97,7 @@ INSTALLED_APPS = [
     "apps.guests",
     "apps.boundaries",
     "apps.parcels",
+    "apps.dashboard",
 ]
 
 # ----------------------------
@@ -153,6 +154,8 @@ DATABASES = {
         "PORT": os.environ.get("DB_PORT"),
     }
 }
+
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
 # Password validation
