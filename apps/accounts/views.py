@@ -13,7 +13,7 @@ def login_view(request):
 
         if user:
             login(request, user)
-            return redirect("map_dashboard")
+            return redirect("parcel_dashboard")
 
         return render(request, "login.html", {"error": "Incorrect email or password"})
 
@@ -38,6 +38,6 @@ def register_view(request):
         user = User.objects.create_user(email=email, password=password)
 
         login(request, user)
-        return redirect("map_dashboard")
+        return redirect("parcel_dashboard")
 
     return render(request, "register.html")
