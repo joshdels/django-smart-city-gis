@@ -1,13 +1,10 @@
 {% extends '_map_base.html' %}
 {% load static %}
-{% block title %}Parcel Map | TopMap{% endblock %}
+{% block title %}Parcel Map | TopMap Solutions{% endblock %}
 {% block extra_css %}
     <link rel="stylesheet" href="{% static 'css/_map.css' %}">
-    <script src={% static 'lib/maplibre-gl.js' %}></script>
-    <link href={% static 'lib/maplibre-gl.css' %} rel='stylesheet' />
 {% endblock %}
 {% block content %}
-    {% include 'components/navbar.html' %}
     <div id="map"></div>
 {% endblock %}
 {% block scripts %}

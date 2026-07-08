@@ -1,0 +1,23 @@
+{% extends '_map_base.html' %}
+{% load static %}
+{% block title %}Parcel Detail | TopMap Solutions{% endblock %}
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/_map.css' %}">
+{% endblock %}
+{% block content %}
+    <section>
+        <div id="map">
+        </div>
+        <main>
+            <h1>Hello</h1>
+            {{ parcel }}
+        </main>
+    </section>
+{% endblock %}
+
+{% block scripts %} 
+    <script>
+        const parcelId = {{ parcel.id }};
+    </script>
+    <script src="{% static 'js/parcel.js' %}"></script>
+{% endblock %}

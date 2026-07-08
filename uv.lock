@@ -65,22 +65,28 @@ version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
     { name = "django" },
-    { name = "djlint" },
     { name = "gunicorn" },
     { name = "psycopg", extra = ["binary"] },
     { name = "python-dotenv" },
     { name = "whitenoise" },
 ]
 
+[package.dev-dependencies]
+dev = [
+    { name = "djlint" },
+]
+
 [package.metadata]
 requires-dist = [
     { name = "django", specifier = ">=6.0.6" },
-    { name = "djlint", specifier = ">=1.40.0" },
     { name = "gunicorn", specifier = ">=26.0.0" },
     { name = "psycopg", extras = ["binary"], specifier = ">=3.3.4" },
     { name = "python-dotenv", specifier = ">=1.2.2" },
     { name = "whitenoise", specifier = ">=6.12.0" },
 ]
+
+[package.metadata.requires-dev]
+dev = [{ name = "djlint", specifier = ">=1.40.0" }]
 
 [[package]]
 name = "djlint"
