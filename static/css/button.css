@@ -15,6 +15,12 @@
   cursor: pointer;
 }
 
+.btn-primary:disabled {
+  background: #b5b5b5;
+  color: var(--color-bg);
+  cursor: not-allowed;
+}
+
 .btn-outline {
   background: transparent;
   border: 1px solid var(--color-dark);

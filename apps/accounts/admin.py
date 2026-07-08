@@ -6,11 +6,14 @@ from .models import User, Organization, Office
 
 @admin.register(User)
 class CustomUserAdmin(UserAdmin):
+    ordering = ["email"]
+    list_display = ("email", "first_name", "last_name", "organization", "office", "role", "is_staff")
+    search_fields = ("email", "first_name", "last_name", "organization")
 
     fieldsets = (
         (
             "User Info",
-            {"fields": ("username", "email", "role", "organization", "office")},
+            {"fields": ("email", "first_name", "last_name", "role", "organization", "office")},
         ),
         (
             "Permissions",
@@ -37,6 +40,6 @@ class OfficeAdmin(admin.ModelAdmin):
 
 
 @admin.register(Organization)
-class Organization(admin.ModelAdmin):
+class OrganizationAdmin(admin.ModelAdmin):
 
     list_display = ("id", "name")
