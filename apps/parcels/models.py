@@ -20,7 +20,9 @@ class TaxInformation(models.Model):
         max_length=100,
     )
 
-    market_value = models.FloatField(blank=True, null=True)
+    market_value = models.DecimalField(
+        max_digits=30, decimal_places=2, blank=True, null=True
+    )
     classification = models.CharField(max_length=100, blank=True)
 
     status = models.CharField(max_length=100, default="active")
@@ -36,8 +38,9 @@ class Parcel(gis_models.Model):
     )
 
     parcel_id = models.CharField(max_length=200, blank=True, null=True)
-    area_auto_m2 = models.FloatField(blank=True, null=True)
-    area_declared = models.FloatField(blank=True, null=True)
+    area_auto_ha = models.DecimalField(max_digits=30, decimal_places=2, blank=True, null=True)
+    area_auto_m2 = models.DecimalField(max_digits=30, decimal_places=2, blank=True, null=True)
+    area_declared = models.DecimalField(max_digits=30, decimal_places=2, blank=True, null=True)
     barangay_name = models.CharField(max_length=255, blank=True, null=True)
 
     geom = gis_models.MultiPolygonField(srid=4326)
