@@ -28,7 +28,6 @@ nav .nav-title {
 
 nav div {
   padding: 1rem;
-  border-left: 2px solid var(--color-dark);
 }
 
 nav img {

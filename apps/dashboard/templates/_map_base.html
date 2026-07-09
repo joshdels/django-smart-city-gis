@@ -9,9 +9,12 @@
         </title>
         <link rel="icon" type="image/x-icon" href="{% static 'favicon.ico' %}">
         <link rel="stylesheet" href="{% static 'css/_global.css' %}">
+        <script src={% static 'lib/maplibre-gl.js' %}></script>
+        <link href={% static 'lib/maplibre-gl.css' %} rel='stylesheet' />
         {% block extra_css %}{% endblock %}
     </head>
     <body>
+        {% include 'components/navbar.html' %}
         {% block content %}{% endblock %}
         {% block scripts %}{% endblock %}
     </body>
