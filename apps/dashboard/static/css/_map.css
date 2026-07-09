@@ -1,4 +1,5 @@
 @import url("map-nav.css");
+@import url("popup.css");
 
 #map {
   min-height: calc(100vh - 80px);

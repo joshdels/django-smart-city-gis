@@ -5,11 +5,11 @@ export function addParcelSources(map, url) {
   });
 }
 
-export function addParcelLayer(map, lineWidth=3) {
+export function addParcelLayer(map, source="parcels", color="#ffa318", lineWidth = 3) {
   map.addLayer({
     id: "parcels-fill-layer",
     type: "fill",
-    source: "parcels",
+    source: source,
     paint: {
       "fill-color": "#000000",
       "fill-opacity": 0.0,
@@ -19,7 +19,20 @@ export function addParcelLayer(map, lineWidth=3) {
   map.addLayer({
     id: "parcels-layer",
     type: "line",
-    source: "parcels",
-    paint: { "line-color": "#ffa318", "line-width": lineWidth },
+    source: source,
+    paint: {
+      "line-color": [
+        "case",
+        ["boolean", ["feature-state", "selected"], false],
+        "#2563eb",
+        color,
+      ],
+      "line-width": [
+        "case",
+        ["boolean", ["feature-state", "selected"], false],
+        lineWidth + 1,
+        lineWidth,
+      ],
+    },
   });
 }

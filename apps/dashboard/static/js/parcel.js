@@ -10,6 +10,6 @@ addMapControls(map, parcelUrl);
 
 map.on("load", () => {
   addParcelSources(map, parcelUrl);
-  addParcelLayer(map, 7);
+  addParcelLayer(map, "parcels", "#2563eb" , 7);
   zoomToFit(map, parcelUrl);
 });
